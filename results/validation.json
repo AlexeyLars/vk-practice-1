@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "quality_checks": [
+    {
+      "check": "customer_duplicate_key",
+      "violations": 0,
+      "query_id": "20261017_185248_00237_kn5nc"
+    },
+    {
+      "check": "orders_duplicate_key",
+      "violations": 0,
+      "query_id": "20261017_185248_00238_kn5nc"
+    },
+    {
+      "check": "lineitem_duplicate_key",
+      "violations": 0,
+      "query_id": "20261017_185248_00239_kn5nc"
+    },
+    {
+      "check": "nation_duplicate_key",
+      "violations": 0,
+      "query_id": "20261017_185249_00240_kn5nc"
+    },
+    {
+      "check": "invalid_lineitem",
+      "violations": 0,
+      "query_id": "20261017_185249_00241_kn5nc"
+    },
+    {
+      "check": "invalid_customer",
+      "violations": 0,
+      "query_id": "20261017_185249_00242_kn5nc"
+    },
+    {
+      "check": "orphan_orders",
+      "violations": 0,
+      "query_id": "20261017_185249_00243_kn5nc"
+    },
+    {
+      "check": "orphan_lineitem",
+      "violations": 0,
+      "query_id": "20261017_185249_00244_kn5nc"
+    },
+    {
+      "check": "orphan_nation",
+      "violations": 0,
+      "query_id": "20261017_185250_00245_kn5nc"
+    },
+    {
+      "check": "silver_date_or_amount",
+      "violations": 0,
+      "query_id": "20261017_185250_00246_kn5nc"
+    }
+  ],
+  "silver_duplicate_keys": 0,
+  "quarter_count_and_revenue": [
+    114705,
+    "4166400548.5255"
+  ],
+  "gold_rows": 20,
+  "gold_max_abs_error_vs_tpch": 1e-10,
+  "comparison_tolerance": "0.000001",
+  "all_gold_columns_compared": true
+}

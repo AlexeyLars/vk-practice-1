@@ -1,0 +1,8 @@
+schema,table,rows,files,bytes,mb
+bronze,customer,150000,1,8133587,8.133587
+bronze,orders,1500000,1,6985441,6.985441
+bronze,lineitem,6001215,2,33513075,33.513075
+bronze,nation,25,1,632,0.000632
+silver,customers,150000,1,8029812,8.029812
+silver,returned_items,114705,1,1625595,1.625595
+gold,top20_returned_customers,20,1,3211,0.003211

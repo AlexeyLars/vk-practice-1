@@ -1,0 +1,29 @@
+{
+  "snapshot_id": 7780297070286732377,
+  "deleted_custkey": 57040,
+  "rows_before": 20,
+  "rows_after_delete": 19,
+  "time_travel_rows": 20,
+  "restored_rows": 20,
+  "full_result_restored": true,
+  "history_columns": [
+    "made_current_at",
+    "snapshot_id",
+    "parent_id",
+    "is_current_ancestor"
+  ],
+  "history": [
+    [
+      "2026-10-17 18:52:51.305 UTC",
+      7780297070286732377,
+      null,
+      true
+    ],
+    [
+      "2026-10-17 18:52:51.516 UTC",
+      7236496050238794999,
+      7780297070286732377,
+      false
+    ]
+  ]
+}

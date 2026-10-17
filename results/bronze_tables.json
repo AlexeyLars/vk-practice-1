@@ -1,0 +1,202 @@
+[
+  {
+    "schema": "bronze_parquet_none",
+    "table": "customer",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 24480357,
+    "mb": 24.480357,
+    "format": "PARQUET",
+    "codec": "NONE"
+  },
+  {
+    "schema": "bronze_parquet_none",
+    "table": "orders",
+    "rows": 1500000,
+    "files": 1,
+    "bytes": 18247830,
+    "mb": 18.24783,
+    "format": "PARQUET",
+    "codec": "NONE"
+  },
+  {
+    "schema": "bronze_parquet_none",
+    "table": "lineitem",
+    "rows": 6001215,
+    "files": 2,
+    "bytes": 98659613,
+    "mb": 98.659613,
+    "format": "PARQUET",
+    "codec": "NONE"
+  },
+  {
+    "schema": "bronze_parquet_none",
+    "table": "nation",
+    "rows": 25,
+    "files": 1,
+    "bytes": 806,
+    "mb": 0.000806,
+    "format": "PARQUET",
+    "codec": "NONE"
+  },
+  {
+    "schema": "bronze_parquet_snappy",
+    "table": "customer",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 12362003,
+    "mb": 12.362003,
+    "format": "PARQUET",
+    "codec": "SNAPPY"
+  },
+  {
+    "schema": "bronze_parquet_snappy",
+    "table": "orders",
+    "rows": 1500000,
+    "files": 1,
+    "bytes": 11893984,
+    "mb": 11.893984,
+    "format": "PARQUET",
+    "codec": "SNAPPY"
+  },
+  {
+    "schema": "bronze_parquet_snappy",
+    "table": "lineitem",
+    "rows": 6001215,
+    "files": 2,
+    "bytes": 51077411,
+    "mb": 51.077411,
+    "format": "PARQUET",
+    "codec": "SNAPPY"
+  },
+  {
+    "schema": "bronze_parquet_snappy",
+    "table": "nation",
+    "rows": 25,
+    "files": 1,
+    "bytes": 691,
+    "mb": 0.000691,
+    "format": "PARQUET",
+    "codec": "SNAPPY"
+  },
+  {
+    "schema": "bronze_parquet_gzip",
+    "table": "customer",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 7994737,
+    "mb": 7.994737,
+    "format": "PARQUET",
+    "codec": "GZIP"
+  },
+  {
+    "schema": "bronze_parquet_gzip",
+    "table": "orders",
+    "rows": 1500000,
+    "files": 1,
+    "bytes": 7639386,
+    "mb": 7.639386,
+    "format": "PARQUET",
+    "codec": "GZIP"
+  },
+  {
+    "schema": "bronze_parquet_gzip",
+    "table": "lineitem",
+    "rows": 6001215,
+    "files": 2,
+    "bytes": 33138931,
+    "mb": 33.138931,
+    "format": "PARQUET",
+    "codec": "GZIP"
+  },
+  {
+    "schema": "bronze_parquet_gzip",
+    "table": "nation",
+    "rows": 25,
+    "files": 1,
+    "bytes": 585,
+    "mb": 0.000585,
+    "format": "PARQUET",
+    "codec": "GZIP"
+  },
+  {
+    "schema": "bronze",
+    "table": "customer",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 8133587,
+    "mb": 8.133587,
+    "format": "PARQUET",
+    "codec": "ZSTD"
+  },
+  {
+    "schema": "bronze",
+    "table": "orders",
+    "rows": 1500000,
+    "files": 1,
+    "bytes": 6985441,
+    "mb": 6.985441,
+    "format": "PARQUET",
+    "codec": "ZSTD"
+  },
+  {
+    "schema": "bronze",
+    "table": "lineitem",
+    "rows": 6001215,
+    "files": 2,
+    "bytes": 33513075,
+    "mb": 33.513075,
+    "format": "PARQUET",
+    "codec": "ZSTD"
+  },
+  {
+    "schema": "bronze",
+    "table": "nation",
+    "rows": 25,
+    "files": 1,
+    "bytes": 632,
+    "mb": 0.000632,
+    "format": "PARQUET",
+    "codec": "ZSTD"
+  },
+  {
+    "schema": "bronze_orc_zstd",
+    "table": "customer",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 7426209,
+    "mb": 7.426209,
+    "format": "ORC",
+    "codec": "ZSTD"
+  },
+  {
+    "schema": "bronze_orc_zstd",
+    "table": "orders",
+    "rows": 1500000,
+    "files": 1,
+    "bytes": 6305392,
+    "mb": 6.305392,
+    "format": "ORC",
+    "codec": "ZSTD"
+  },
+  {
+    "schema": "bronze_orc_zstd",
+    "table": "lineitem",
+    "rows": 6001215,
+    "files": 2,
+    "bytes": 39379592,
+    "mb": 39.379592,
+    "format": "ORC",
+    "codec": "ZSTD"
+  },
+  {
+    "schema": "bronze_orc_zstd",
+    "table": "nation",
+    "rows": 25,
+    "files": 1,
+    "bytes": 605,
+    "mb": 0.000605,
+    "format": "ORC",
+    "codec": "ZSTD"
+  }
+]

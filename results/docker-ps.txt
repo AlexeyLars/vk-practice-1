@@ -1,0 +1,7 @@
+NAME                            IMAGE                                     COMMAND                  SERVICE         CREATED         STATUS                      PORTS
+vk-practice-1-create-bucket-1   pgsty/silo:RELEASE.2026-09-03T13-18-01Z   "/bin/sh -ec 'mc ali…"   create-bucket   4 minutes ago   Exited (0) 51 seconds ago   
+vk-practice-1-lakekeeper-1      quay.io/lakekeeper/catalog:v0.10.0        "/home/nonroot/lakek…"   lakekeeper      4 minutes ago   Up 4 minutes (healthy)      127.0.0.1:18181->8181/tcp
+vk-practice-1-migrate-1         quay.io/lakekeeper/catalog:v0.10.0        "/home/nonroot/lakek…"   migrate         4 minutes ago   Exited (0) 50 seconds ago   
+vk-practice-1-minio-1           pgsty/silo:RELEASE.2026-09-03T13-18-01Z   "/usr/bin/docker-ent…"   minio           4 minutes ago   Up 4 minutes (healthy)      127.0.0.1:19000->9000/tcp, 127.0.0.1:19001->9001/tcp
+vk-practice-1-postgres-1        postgres:16.10                            "docker-entrypoint.s…"   postgres        4 minutes ago   Up 4 minutes (healthy)      5432/tcp
+vk-practice-1-trino-1           trinodb/trino:481                         "/usr/lib/trino/bin/…"   trino           4 minutes ago   Up 4 minutes (healthy)      127.0.0.1:18080->8080/tcp

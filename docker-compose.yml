@@ -1,0 +1,115 @@
+name: vk-practice-1
+
+x-lakekeeper-env: &lakekeeper-env
+  LAKEKEEPER__PG_ENCRYPTION_KEY: practice-1-local-encryption-key
+  LAKEKEEPER__PG_DATABASE_URL_READ: postgresql://lakekeeper:practice-local@postgres:5432/lakekeeper
+  LAKEKEEPER__PG_DATABASE_URL_WRITE: postgresql://lakekeeper:practice-local@postgres:5432/lakekeeper
+  RUST_LOG: info
+
+services:
+  postgres:
+    image: postgres:16.10
+    environment:
+      POSTGRES_USER: lakekeeper
+      POSTGRES_PASSWORD: practice-local
+      POSTGRES_DB: lakekeeper
+    volumes: [postgres-data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U lakekeeper -d lakekeeper]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+
+  minio:
+    # Maintained MinIO fork used by the official Lakekeeper minimal example.
+    image: pgsty/silo:RELEASE.2026-09-03T13-18-01Z
+    command: [server, /data, --console-address, ':9001']
+    environment:
+      MINIO_ROOT_USER: practice-admin
+      MINIO_ROOT_PASSWORD: practice-local-password
+    ports: ['127.0.0.1:19000:9000', '127.0.0.1:19001:9001']
+    volumes: [minio-data:/data]
+    healthcheck:
+      test: [CMD, mc, ready, local]
+      interval: 3s
+      timeout: 5s
+      retries: 30
+      start_period: 10s
+
+  create-bucket:
+    image: pgsty/silo:RELEASE.2026-09-03T13-18-01Z
+    depends_on:
+      minio: {condition: service_healthy}
+    entrypoint: [/bin/sh, -ec]
+    command:
+      - mc alias set practice http://minio:9000 practice-admin practice-local-password; mc mb --ignore-existing practice/warehouse
+
+  migrate:
+    image: quay.io/lakekeeper/catalog:v0.10.0
+    environment: *lakekeeper-env
+    command: [migrate]
+    depends_on:
+      postgres: {condition: service_healthy}
+
+  lakekeeper:
+    image: quay.io/lakekeeper/catalog:v0.10.0
+    environment: *lakekeeper-env
+    command: [serve]
+    ports: ['127.0.0.1:18181:8181']
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      create-bucket: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, /home/nonroot/lakekeeper, healthcheck]
+      interval: 3s
+      timeout: 10s
+      retries: 30
+
+  trino:
+    image: trinodb/trino:481
+    mem_limit: 8g
+    ports: ['127.0.0.1:18080:8080']
+    volumes:
+      - ./config/trino/config.properties:/etc/trino/config.properties:ro
+      - ./config/trino/jvm.config:/etc/trino/jvm.config:ro
+      - ./config/trino/catalog:/etc/trino/catalog:ro
+    depends_on:
+      lakekeeper: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, curl, -fsS, http://localhost:8080/v1/info]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 30s
+
+  spark:
+    image: apache/spark:3.5.7
+    profiles: [tools]
+    user: '0:0'
+    environment:
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: practice-admin
+      AWS_SECRET_ACCESS_KEY: practice-local-password
+    volumes:
+      - ./scripts:/work/scripts:ro
+      - ./sql:/work/sql:ro
+      - ./results:/work/results
+      - spark-ivy:/tmp/ivy
+    entrypoint: [/opt/spark/bin/spark-submit]
+    command:
+      - --master
+      - local[2]
+      - --driver-memory
+      - 2g
+      - --conf
+      - spark.jars.ivy=/tmp/ivy
+      - --packages
+      - org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.9.2,org.apache.iceberg:iceberg-aws-bundle:1.9.2
+      - /work/scripts/spark_bronze.py
+    depends_on:
+      lakekeeper: {condition: service_healthy}
+
+volumes:
+  postgres-data:
+  minio-data:
+  spark-ivy:

@@ -1,0 +1,214 @@
+{
+  "status": "passed",
+  "tables_verified": 23,
+  "all_bucket_object_bytes": 379256710,
+  "tables": [
+    {
+      "table": "bronze_parquet_none.customer",
+      "files": 1,
+      "bytes": 24480357,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "none"
+    },
+    {
+      "table": "bronze_parquet_none.orders",
+      "files": 1,
+      "bytes": 18247830,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "none"
+    },
+    {
+      "table": "bronze_parquet_none.lineitem",
+      "files": 2,
+      "bytes": 98659613,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "none"
+    },
+    {
+      "table": "bronze_parquet_none.nation",
+      "files": 1,
+      "bytes": 806,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "none"
+    },
+    {
+      "table": "bronze_parquet_snappy.customer",
+      "files": 1,
+      "bytes": 12362003,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "snappy"
+    },
+    {
+      "table": "bronze_parquet_snappy.orders",
+      "files": 1,
+      "bytes": 11893984,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "snappy"
+    },
+    {
+      "table": "bronze_parquet_snappy.lineitem",
+      "files": 2,
+      "bytes": 51077411,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "snappy"
+    },
+    {
+      "table": "bronze_parquet_snappy.nation",
+      "files": 1,
+      "bytes": 691,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "snappy"
+    },
+    {
+      "table": "bronze_parquet_gzip.customer",
+      "files": 1,
+      "bytes": 7994737,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "gzip"
+    },
+    {
+      "table": "bronze_parquet_gzip.orders",
+      "files": 1,
+      "bytes": 7639386,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "gzip"
+    },
+    {
+      "table": "bronze_parquet_gzip.lineitem",
+      "files": 2,
+      "bytes": 33138931,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "gzip"
+    },
+    {
+      "table": "bronze_parquet_gzip.nation",
+      "files": 1,
+      "bytes": 585,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "gzip"
+    },
+    {
+      "table": "bronze.customer",
+      "files": 1,
+      "bytes": 8133587,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "zstd"
+    },
+    {
+      "table": "bronze.orders",
+      "files": 1,
+      "bytes": 6985441,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "zstd"
+    },
+    {
+      "table": "bronze.lineitem",
+      "files": 2,
+      "bytes": 33513075,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "zstd"
+    },
+    {
+      "table": "bronze.nation",
+      "files": 1,
+      "bytes": 632,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "zstd"
+    },
+    {
+      "table": "bronze_orc_zstd.customer",
+      "files": 1,
+      "bytes": 7426209,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "orc",
+      "codec": "zstd"
+    },
+    {
+      "table": "bronze_orc_zstd.orders",
+      "files": 1,
+      "bytes": 6305392,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "orc",
+      "codec": "zstd"
+    },
+    {
+      "table": "bronze_orc_zstd.lineitem",
+      "files": 2,
+      "bytes": 39379592,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "orc",
+      "codec": "zstd"
+    },
+    {
+      "table": "bronze_orc_zstd.nation",
+      "files": 1,
+      "bytes": 605,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "orc",
+      "codec": "zstd"
+    },
+    {
+      "table": "silver.customers",
+      "files": 1,
+      "bytes": 8029812,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "zstd"
+    },
+    {
+      "table": "silver.returned_items",
+      "files": 1,
+      "bytes": 1625595,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "zstd"
+    },
+    {
+      "table": "gold.top20_returned_customers",
+      "files": 1,
+      "bytes": 3211,
+      "matches_actual_s3": true,
+      "format_version": 2,
+      "format": "parquet",
+      "codec": "zstd"
+    }
+  ]
+}

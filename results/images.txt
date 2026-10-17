@@ -1,0 +1,5 @@
+[pgsty/silo:RELEASE.2026-09-03T13-18-01Z] arm64 [pgsty/silo@sha256:b616a0cf8cb281e7e6bb3c9b1fb53875b4016a2878223925541c18f82d6c5ca3]
+[postgres:16.10] arm64 [postgres@sha256:21f6013073bc6b92830a2129570e2f5ec42a6c734b5a985a41e83aa58f54c3c1]
+[quay.io/lakekeeper/catalog:v0.10.0] arm64 [quay.io/lakekeeper/catalog@sha256:6262a2e8b299a0f64dfdcc716bc89ab74fcb5eecb07b2375430fc257baf05b16]
+[trinodb/trino:481] arm64 [trinodb/trino@sha256:5b5e0a97f599a30a2e23c7c7061e4e4d546a914b4fad2a2a002998140ceb4006]
+[apache/spark:3.5.7] arm64 [apache/spark@sha256:936ff39fd63e2bb5ed064f0fbe1518198473f1cdbfa2f863d087a9a8e58116ba]

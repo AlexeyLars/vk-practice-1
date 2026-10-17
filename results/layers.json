@@ -1,0 +1,58 @@
+[
+  {
+    "schema": "bronze",
+    "table": "customer",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 8133587,
+    "mb": 8.133587
+  },
+  {
+    "schema": "bronze",
+    "table": "orders",
+    "rows": 1500000,
+    "files": 1,
+    "bytes": 6985441,
+    "mb": 6.985441
+  },
+  {
+    "schema": "bronze",
+    "table": "lineitem",
+    "rows": 6001215,
+    "files": 2,
+    "bytes": 33513075,
+    "mb": 33.513075
+  },
+  {
+    "schema": "bronze",
+    "table": "nation",
+    "rows": 25,
+    "files": 1,
+    "bytes": 632,
+    "mb": 0.000632
+  },
+  {
+    "schema": "silver",
+    "table": "customers",
+    "rows": 150000,
+    "files": 1,
+    "bytes": 8029812,
+    "mb": 8.029812
+  },
+  {
+    "schema": "silver",
+    "table": "returned_items",
+    "rows": 114705,
+    "files": 1,
+    "bytes": 1625595,
+    "mb": 1.625595
+  },
+  {
+    "schema": "gold",
+    "table": "top20_returned_customers",
+    "rows": 20,
+    "files": 1,
+    "bytes": 3211,
+    "mb": 0.003211
+  }
+]

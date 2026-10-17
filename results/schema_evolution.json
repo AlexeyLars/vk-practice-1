@@ -1,0 +1,61 @@
+{
+  "rows_before": 150000,
+  "new_column_null_rows": 150000,
+  "data_files_unchanged": true,
+  "describe_after_rename": [
+    [
+      "custkey",
+      "bigint",
+      "",
+      ""
+    ],
+    [
+      "name",
+      "varchar",
+      "",
+      ""
+    ],
+    [
+      "acctbal",
+      "decimal(15,2)",
+      "",
+      ""
+    ],
+    [
+      "nation",
+      "varchar",
+      "",
+      ""
+    ],
+    [
+      "address",
+      "varchar",
+      "",
+      ""
+    ],
+    [
+      "phone",
+      "varchar",
+      "",
+      ""
+    ],
+    [
+      "comment",
+      "varchar",
+      "",
+      ""
+    ],
+    [
+      "source_label",
+      "varchar",
+      "",
+      ""
+    ]
+  ],
+  "data_file_paths": [
+    [
+      "s3://warehouse/practice-1/01a14b35-9a35-7060-9fd4-d2cd1e80d584/customers-e9c1e390faf74040894665260dd6f5ed/data/20261017_185246_00233_kn5nc-5d6bf1c7-7196-4590-ac29-61c50f659e2d.parquet"
+    ]
+  ],
+  "demo_column_removed_after_check": true
+}
